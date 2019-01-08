@@ -14,12 +14,13 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.requires_arc = true
 
-  s.source       = { :git => '.../Logan.git', :tag => s.version.to_s }
+  s.source       = { :git => 'https://github.com/LawrenceHan/Logan.git', :tag => s.version.to_s }
   s.source_files = 'Logan/LoganSwift/LoganSwift/*.{swift,h}', 'Logan/Clogan/*.{h,c}', 'Logan/mbedtls/**/*.{h,c}'
   s.public_header_files = "Logan/LoganSwift/LoganSwift/*.h"
   s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/Logan/Logan/Clogan/**', 'LIBRARY_SEARCH_PATHS' => '$(SRCROOT)/Logan/Logan/'}
   s.preserve_paths  = 'Logan/Clogan/module.modulemap'
-  
+  s.libraries = 'z'
+
   # s.subspec 'mbedtls' do |mbedtls|
   #   mbedtls.source_files = "Logan/mbedtls/**/*.{h,c}"
   #   mbedtls.header_dir = 'mbedtls'
