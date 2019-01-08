@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/LawrenceHan/Logan.git', :tag => s.version.to_s }
   s.source_files = 'Logan/LoganSwift/LoganSwift/*.{swift,h}', 'Logan/Clogan/*.{h,c}', 'Logan/mbedtls/**/*.{h,c}'
   s.public_header_files = "Logan/LoganSwift/LoganSwift/*.h"
-  s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/Logan/Logan/Clogan/**', 'HEADER_SEARCH_PATHS' => '$(SRCROOT)/Logan/Logan/mbedtls/include/'}
+  s.pod_target_xcconfig = {'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/LoganSwift/Logan/Clogan/**', 'HEADER_SEARCH_PATHS' => '$(SRCROOT)/LoganSwift/Logan/mbedtls/include/'}
   s.preserve_paths  = 'Logan/Clogan/module.modulemap'
   s.libraries = 'z'
 
