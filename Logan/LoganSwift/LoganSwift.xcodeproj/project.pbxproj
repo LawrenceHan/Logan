@@ -185,6 +185,8 @@
 		028F97B821E3893100B1DF4C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028F97B621E3893100B1DF4C /* MainMenu.xib */; };
 		028F97BE21E3894C00B1DF4C /* LoganSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028F97A821E3826400B1DF4C /* LoganSwift.framework */; };
 		028F97BF21E3897700B1DF4C /* LoganExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DC45521E329FB00163479 /* LoganExtension.swift */; };
+		02A6BE2D21E4A55F00BA675B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A6BE2C21E4A55F00BA675B /* libz.tbd */; };
+		02A6BE2F21E4A57200BA675B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A6BE2E21E4A57200BA675B /* libz.tbd */; };
 		02BD1F5221E0BCBB00E023B9 /* LoganSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BD1F5021E0BCBB00E023B9 /* LoganSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02BD20B221E0E6A400E023B9 /* LoganSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD20B121E0E6A400E023B9 /* LoganSwift.swift */; };
 		02BD216321E0EF4E00E023B9 /* pem.h in Headers */ = {isa = PBXBuildFile; fileRef = 02BD20B721E0EF4D00E023B9 /* pem.h */; };
@@ -369,6 +371,8 @@
 		028F97B721E3893100B1DF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		028F97B921E3893100B1DF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		028F97BA21E3893100B1DF4C /* example_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = example_macOS.entitlements; sourceTree = "<group>"; };
+		02A6BE2C21E4A55F00BA675B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		02A6BE2E21E4A57200BA675B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		02BD1F4D21E0BCBB00E023B9 /* LoganSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoganSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02BD1F5021E0BCBB00E023B9 /* LoganSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoganSwift.h; sourceTree = "<group>"; };
 		02BD1F5121E0BCBB00E023B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -558,6 +562,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A6BE2F21E4A57200BA675B /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +578,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A6BE2D21E4A55F00BA675B /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +602,8 @@
 		028F962421E33E9A00B1DF4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02A6BE2E21E4A57200BA675B /* libz.tbd */,
+				02A6BE2C21E4A55F00BA675B /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
