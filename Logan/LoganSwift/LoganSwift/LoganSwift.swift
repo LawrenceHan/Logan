@@ -90,10 +90,7 @@ extension LoganImpl {
         let threadNumber = self.threadNumber()
         let isMain = Thread.current.isMainThread
         let threadName = Thread.current.name != nil ? (Thread.current.name! as NSString) : ("" as NSString)
-        
-        let log = UnsafeMutablePointer<Int8>(mutating: (text as NSString).utf8String)
-        let thread_name = UnsafeMutablePointer<Int8>(mutating: threadName.utf8String)
-        
+
         if LOGANUSEASL {
             printLog(text, type: type)
         }
@@ -103,6 +100,9 @@ extension LoganImpl {
         }
         
         async { [unowned self] in
+            let log = UnsafeMutablePointer<Int8>(mutating: (text as NSString).utf8String)
+            let thread_name = UnsafeMutablePointer<Int8>(mutating: threadName.utf8String)
+
             let today = self.currentDate
             if !self.lastLogDate.isEmpty && self.lastLogDate != today {
                 clogan_flush()
