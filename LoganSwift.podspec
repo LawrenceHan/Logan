@@ -1,8 +1,8 @@
-Pod::Spec.new do |s
+Pod::Spec.new do |s|
   s.name          = "LoganSwift"
   s.version       = "1.1.3"
-  s.summary       = 'Logan is a lightweight case logging system based on mobile platform.'
-  s.swift_version = "5"
+  s.summary       = "Logan is a lightweight case logging system based on mobile platform."
+  s.swift_version = "5.0"
   s.description   = <<-DESC
   LoganSwift is a pure Swift implemented kit on top of Clogan. Logan is a lightweight case logging system based on mobile platform.
                    DESC
