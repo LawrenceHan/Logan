@@ -1,6 +1,6 @@
 Pod::Spec.new do |s
   s.name          = "LoganSwift"
-  s.version       = "1.1.2"
+  s.version       = "1.1.3"
   s.summary       = 'Logan is a lightweight case logging system based on mobile platform.'
   s.swift_version = "5"
   s.description   = <<-DESC
