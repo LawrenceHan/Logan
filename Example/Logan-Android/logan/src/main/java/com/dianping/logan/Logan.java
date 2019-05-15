@@ -45,6 +45,9 @@ public class Logan {
      * @brief Logan写入日志
      */
     public static void w(String log, int type) {
+        if (sLoganControlCenter == null) {
+            throw new RuntimeException("Please initialize Logan first");
+        }
         sLoganControlCenter.write(log, type);
     }
 
@@ -52,6 +55,9 @@ public class Logan {
      * @brief 立即写入日志文件
      */
     public static void f() {
+        if (sLoganControlCenter == null) {
+            throw new RuntimeException("Please initialize Logan first");
+        }
         sLoganControlCenter.flush();
     }
 
@@ -61,6 +67,9 @@ public class Logan {
      * @brief 发送日志
      */
     public static void s(String dates[], SendLogRunnable runnable) {
+        if (sLoganControlCenter == null) {
+            throw new RuntimeException("Please initialize Logan first");
+        }
         sLoganControlCenter.send(dates, runnable);
     }
 
@@ -68,6 +77,9 @@ public class Logan {
      * @brief 返回所有日志文件信息
      */
     public static Map<String, Long> getAllFilesInfo() {
+        if (sLoganControlCenter == null) {
+            throw new RuntimeException("Please initialize Logan first");
+        }
         File dir = sLoganControlCenter.getDir();
         if (!dir.exists()) {
             return null;
@@ -81,7 +93,7 @@ public class Logan {
             try {
                 allFilesInfo.put(Util.getDateStr(Long.parseLong(file.getName())), file.length());
             } catch (NumberFormatException e) {
-                e.printStackTrace();
+                // ignore
             }
         }
         return allFilesInfo;

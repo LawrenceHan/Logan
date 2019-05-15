@@ -40,37 +40,36 @@ public abstract class SendLogRunnable implements Runnable {
      */
     public abstract void sendLog(File logFile);
 
-    public void setSendAction(SendAction action) {
+    void setSendAction(SendAction action) {
         mSendAction = action;
     }
 
     @Override
     public void run() {
         if (mSendAction == null || TextUtils.isEmpty(mSendAction.date)) {
-            if (mCallBackListener != null) {
-                mCallBackListener.onCallBack(FINISH);
-            }
+            finish();
             return;
         }
 
         if (TextUtils.isEmpty(mSendAction.uploadPath)) {
-            if (mCallBackListener != null) {
-                mCallBackListener.onCallBack(FINISH);
-            }
+            finish();
             return;
         }
         File file = new File(mSendAction.uploadPath);
         sendLog(file);
-        if (mSendAction.date.equals(String.valueOf(Util.getCurrentTime()))) {
-            file.delete();
-        }
+    }
+
+    void setCallBackListener(OnSendLogCallBackListener callBackListener) {
+        mCallBackListener = callBackListener;
+    }
+
+    /**
+     * Must call this method after send log finish!
+     */
+    protected void finish() {
         if (mCallBackListener != null) {
             mCallBackListener.onCallBack(FINISH);
         }
-    }
-
-    public void setCallBackListener(OnSendLogCallBackListener callBackListener) {
-        mCallBackListener = callBackListener;
     }
 
     interface OnSendLogCallBackListener {
