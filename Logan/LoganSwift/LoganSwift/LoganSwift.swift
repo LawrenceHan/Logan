@@ -41,7 +41,7 @@ public typealias FileInfo = [String: UInt64]
 final public class LoganImpl {
     
     public init(context: LoganEncryptionContext) {
-        loganQueue = DispatchQueue(label: "com.dianping.logan", qos: .utility)
+        loganQueue = DispatchQueue(label: "com.dianping.logan.swift", qos: .utility)
         loganQueue.setSpecific(key: QueueSpecificKey, value: specific)
         self.context = context
         
@@ -66,7 +66,6 @@ final public class LoganImpl {
     private let loganQueue: DispatchQueue
     private var lastCheckFreeSpace: TimeInterval = 0
     private var lastLogDate: String = ""
-    //    private var dtime: time_t = -1
 }
 
 /// public methods
@@ -188,21 +187,6 @@ extension LoganImpl {
 extension LoganImpl {
     private func printLog(_ what: @autoclosure () -> String, type: Int) {
         let string = what()
-        
-        //        if (dtime == -1) {
-        //            var rawTime = time_t()
-        //            time(&rawTime)
-        //            var timeinfo = tm()
-        //            localtime_r(&rawTime, &timeinfo)
-        //            dtime = timeinfo.tm_gmtoff
-        //        }
-        //        struct timeval time;
-        //        gettimeofday(&time, NULL);
-        //        int secOfDay = (time.tv_sec + dtime) % (3600 * 24);
-        //        int hour = secOfDay / 3600;
-        //        int minute = secOfDay % 3600 / 60;
-        //        int second = secOfDay % 60;
-        //        int millis = time.tv_usec / 1000;
         
         var rawTime = time_t()
         time(&rawTime)
